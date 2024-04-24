@@ -1,0 +1,33 @@
+{
+  "version": 2,
+  "dgSpecHash": "KTPq4fu+if9qAMFK34MkMWwAN7kWlL2nHb6qX8xk8Q4bwS3y2sQ1SXBOBKXgfjhe5fYEvaul6lBJX59AmBE4pw==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\DocumentRegister.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\ants\\.nuget\\packages\\ghostscript.net\\1.2.3.1\\ghostscript.net.1.2.3.1.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.755\\microsoft.windows.sdk.buildtools.10.0.22621.755.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.230913002\\microsoft.windowsappsdk.1.4.230913002.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.28\\microsoft.netcore.app.runtime.win-x86.6.0.28.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.31\\microsoft.windows.sdk.net.ref.10.0.19041.31.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.28\\microsoft.aspnetcore.app.runtime.win-x86.6.0.28.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.netcore.app.runtime.win-arm64\\6.0.28\\microsoft.netcore.app.runtime.win-arm64.6.0.28.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x64\\6.0.28\\microsoft.aspnetcore.app.runtime.win-x64.6.0.28.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-arm64\\6.0.28\\microsoft.windowsdesktop.app.runtime.win-arm64.6.0.28.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x64\\6.0.28\\microsoft.windowsdesktop.app.runtime.win-x64.6.0.28.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-arm64\\6.0.28\\microsoft.aspnetcore.app.runtime.win-arm64.6.0.28.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x64\\6.0.28\\microsoft.netcore.app.runtime.win-x64.6.0.28.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.windowsdesktop.app.runtime.win-x86\\6.0.28\\microsoft.windowsdesktop.app.runtime.win-x86.6.0.28.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1701",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Package 'Ghostscript.NET 1.2.3.1' was restored using '.NETFramework,Version=v4.6.1, .NETFramework,Version=v4.6.2, .NETFramework,Version=v4.7, .NETFramework,Version=v4.7.1, .NETFramework,Version=v4.7.2, .NETFramework,Version=v4.8, .NETFramework,Version=v4.8.1' instead of the project target framework 'net6.0-windows10.0.19041'. This package may not be fully compatible with your project.",
+      "libraryId": "Ghostscript.NET",
+      "targetGraphs": [
+        "net6.0-windows10.0.19041"
+      ]
+    }
+  ]
+}

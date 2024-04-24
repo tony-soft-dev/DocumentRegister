@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Window
+    x:Class="DocumentRegister.MainWindow"
+    xmlns:local="using:DocumentRegister.Models"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+
+    <Grid>
+        <Pivot Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}" >
+            <Pivot.TitleTemplate>
+                <DataTemplate>
+                    <Grid>
+                        <TextBlock Text="Client Document Registration" Style="{ThemeResource HeaderTextBlockStyle}"/>
+                    </Grid>
+                </DataTemplate>
+            </Pivot.TitleTemplate>
+            <PivotItem Header="Register" Margin="0">
+                <Grid Background="White">
+                    <RelativePanel>
+
+
+
+                        <RelativePanel x:Name="List" Margin="20" >
+                            <Grid>
+                                <TextBlock x:Name="CaseName" Text="Run script to see.." Typography.Capitals="Normal" FontSize="22" />
+                                <ListView x:Name="ToBeProcessedList" Margin="20" Padding="20" Width="400" SelectionMode="Single" IsItemClickEnabled="False" SelectionChanged="SelectFile" FlowDirection="LeftToRight" >
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate x:Name="test" x:DataType="local:ToProcess">
+                                            <TextBlock Text="{x:Bind Name}" />
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </Grid>
+                        </RelativePanel>
+
+                        <StackPanel x:Name="Form" Margin="20" RelativePanel.RightOf="List" >
+                            <!--<RelativePanel HorizontalAlignment="Right">
+                                <Button x:Name="prevButton" Margin="24,24,0,0"  Width="100" Click="previous_Click">Prev</Button>
+                                <Button x:Name="nextButton" Margin="24,24,0,0"  Width="100" Click="next_Click" RelativePanel.RightOf="prevButton">Next</Button>
+                            </RelativePanel>-->
+                            <!--<TextBlock x:Name="CaseName" Text="Run script to see.." Typography.Capitals="Normal" FontSize="22" />-->
+                            <TextBox x:Name="Description" Text="" IsEnabled="False" Header="Description" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
+                            <DatePicker x:Name="Date" IsEnabled="False" Header="Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>
+                            <TextBox x:Name="To" IsEnabled="False" Header="To" PlaceholderText="Who it was sent to" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
+                            <TextBox x:Name="From" IsEnabled="False" Header="From" PlaceholderText="Who sent it" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="AlphanumericFullWidth" />
+                            <RelativePanel>
+                                <ComboBox x:Name="Type" IsEnabled="False" PlaceholderText="Type" Margin="0,24,0,0" MaxWidth="200">
+                                    <x:String>Discovery</x:String>
+                                    <x:String>General Correspondence</x:String>
+                                    <x:String>Internal Forms</x:String>
+                                    <x:String>Pleadings</x:String>
+                                    <x:String>Evidence</x:String>
+                                </ComboBox>
+                                <CheckBox x:Name="PrivilegedCheckbox" IsEnabled="False" Margin="24,24,0,0" Content="Privilaged" Checked="HandleCheckbox" Unchecked="HandleCheckbox" RelativePanel.RightOf="Type" />
+                            </RelativePanel>
+                            <Button x:Name="SaveButton" IsEnabled="False" Margin="24,24,0,0"  Width="100" Click="saveExcel">Save</Button>
+
+                        </StackPanel>
+
+                        <StackPanel x:Name="Display" Margin="20" RelativePanel.RightOf="List">
+                            <TextBlock x:Name="ErrorMessage" FontFamily="Arial"
+                                FontSize="24" FontStyle="Normal" TextWrapping="WrapWholeWords"
+                                CharacterSpacing="200" Foreground="Red" />
+                            <Image x:Name="PDFPreview" />
+                        </StackPanel>
+                    </RelativePanel>
+                    
+                </Grid>
+            </PivotItem>
+
+            <PivotItem Header="Settings"/>
+            <Pivot.RightHeader>
+                <CommandBar OverflowButtonVisibility="Collapsed" Background="Transparent">
+                    <AppBarButton x:Name="prevButton" Icon="Previous" Click="previous_Click"/>
+                    <AppBarSeparator/>
+                    <AppBarButton x:Name="myButton" Icon="Play" Click="runScript_Click"/>
+                    <AppBarSeparator/>
+                    <AppBarButton x:Name="nextButton" Icon="Next" Click="next_Click"/>
+                    <AppBarSeparator/>
+                    <AppBarButton Icon="Delete"/>
+                    <AppBarSeparator/>
+                </CommandBar>
+            </Pivot.RightHeader>
+        </Pivot>
+    </Grid>
+    <!--<DataTemplate x:Name="ToBeProcessedListTemplate" x:DataType="local:ToProcess" >
+        <TextBlock Text="{x:Bind Name}" />
+    </DataTemplate>-->
+
+</Window>
+
+

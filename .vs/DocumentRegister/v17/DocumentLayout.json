@@ -1,0 +1,119 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\ants\\workspace\\DocumentRegister\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\models\\case.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\models\\case.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\helpers\\viewfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\helpers\\viewfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\helpers\\pathparsing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\helpers\\pathparsing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 229,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "PathParsing.cs",
+              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\PathParsing.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\Helpers\\PathParsing.cs",
+              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\PathParsing.cs",
+              "RelativeToolTip": "DocumentRegister\\Helpers\\PathParsing.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAACQAAAAYAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T04:03:54.039Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "ViewFile.cs",
+              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\ViewFile.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\Helpers\\ViewFile.cs",
+              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\ViewFile.cs",
+              "RelativeToolTip": "DocumentRegister\\Helpers\\ViewFile.cs",
+              "ViewState": "AQIAABYAAAAA0MzMzMwWwC8AAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-01T03:20:25.387Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml",
+              "RelativeDocumentMoniker": "DocumentRegister\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml",
+              "RelativeToolTip": "DocumentRegister\\MainWindow.xaml",
+              "ViewState": "AQIAABEAAAAAAAAAAAAgwBwAAABcAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2024-04-13T20:15:21.028Z",
+              "EditorCaption": ""
+            }
+          ]
+        },
+        {
+          "DockedWidth": 171,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml.cs",
+              "RelativeToolTip": "DocumentRegister\\MainWindow.xaml.cs",
+              "ViewState": "AQIAAEYAAAAAAAAAAAAYwE4AAAAJAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-13T20:25:33.721Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "Case.cs",
+              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Case.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\Models\\Case.cs",
+              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Case.cs",
+              "RelativeToolTip": "DocumentRegister\\Models\\Case.cs",
+              "ViewState": "AQIAAB8AAAAAAAAAAAAqwCQAAABIAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-03-29T21:47:33.133Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

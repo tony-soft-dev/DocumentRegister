@@ -1,0 +1,10 @@
+{
+  "profiles": {
+    "DocumentRegister (Package)": {
+      "commandName": "MsixPackage"
+    },
+    "DocumentRegister (Unpackaged)": {
+      "commandName": "Project"
+    }
+  }
+}
