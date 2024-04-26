@@ -20,16 +20,13 @@
             <PivotItem Header="Register" Margin="0">
                 <Grid Background="White">
                     <RelativePanel>
-
-
-
                         <RelativePanel x:Name="List" Margin="20" >
                             <Grid>
-                                <TextBlock x:Name="CaseName" Text="Run script to see.." Typography.Capitals="Normal" FontSize="22" />
+                                <TextBlock x:Name="CaseName" Text="{StaticResource cases[caseIndex].CaseName}" Text="Run script to see.." Typography.Capitals="Normal" FontSize="22" />
                                 <ListView x:Name="ToBeProcessedList" Margin="20" Padding="20" Width="400" SelectionMode="Single" IsItemClickEnabled="False" SelectionChanged="SelectFile" FlowDirection="LeftToRight" >
                                     <ListView.ItemTemplate>
                                         <DataTemplate x:Name="test" x:DataType="local:ToProcess">
-                                            <TextBlock Text="{x:Bind Name}" />
+                                            <TextBlock Text="{Binding Name}" />
                                         </DataTemplate>
                                     </ListView.ItemTemplate>
                                 </ListView>
@@ -37,12 +34,7 @@
                         </RelativePanel>
 
                         <StackPanel x:Name="Form" Margin="20" RelativePanel.RightOf="List" >
-                            <!--<RelativePanel HorizontalAlignment="Right">
-                                <Button x:Name="prevButton" Margin="24,24,0,0"  Width="100" Click="previous_Click">Prev</Button>
-                                <Button x:Name="nextButton" Margin="24,24,0,0"  Width="100" Click="next_Click" RelativePanel.RightOf="prevButton">Next</Button>
-                            </RelativePanel>-->
-                            <!--<TextBlock x:Name="CaseName" Text="Run script to see.." Typography.Capitals="Normal" FontSize="22" />-->
-                            <TextBox x:Name="Description" Text="" IsEnabled="False" Header="Description" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
+                            <TextBox x:Name="Description"  Text="" IsEnabled="False" Header="Description" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
                             <DatePicker x:Name="Date" IsEnabled="False" Header="Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>
                             <TextBox x:Name="To" IsEnabled="False" Header="To" PlaceholderText="Who it was sent to" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
                             <TextBox x:Name="From" IsEnabled="False" Header="From" PlaceholderText="Who sent it" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="AlphanumericFullWidth" />
@@ -60,11 +52,11 @@
 
                         </StackPanel>
 
-                        <StackPanel x:Name="Display" Margin="20" RelativePanel.RightOf="List">
+                        <StackPanel x:Name="Display" Margin="20" RelativePanel.RightOf="Form">
                             <TextBlock x:Name="ErrorMessage" FontFamily="Arial"
                                 FontSize="24" FontStyle="Normal" TextWrapping="WrapWholeWords"
                                 CharacterSpacing="200" Foreground="Red" />
-                            <Image x:Name="PDFPreview" />
+                            <Image x:Name="PDFPreview" Stretch="UniformToFill" />
                         </StackPanel>
                     </RelativePanel>
                     
@@ -86,9 +78,6 @@
             </Pivot.RightHeader>
         </Pivot>
     </Grid>
-    <!--<DataTemplate x:Name="ToBeProcessedListTemplate" x:DataType="local:ToProcess" >
-        <TextBlock Text="{x:Bind Name}" />
-    </DataTemplate>-->
 
 </Window>
 

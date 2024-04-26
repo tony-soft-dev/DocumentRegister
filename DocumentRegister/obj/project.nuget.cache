@@ -1,12 +1,12 @@
 {
   "version": 2,
-  "dgSpecHash": "KTPq4fu+if9qAMFK34MkMWwAN7kWlL2nHb6qX8xk8Q4bwS3y2sQ1SXBOBKXgfjhe5fYEvaul6lBJX59AmBE4pw==",
+  "dgSpecHash": "M7al10FstLZsymxXlxennEjnMSjA/hQ31PRW21cA4yyHJWb1TmYudw1f1FCSjg/zxt50J3Bb3tTDZjVzlJyZWQ==",
   "success": true,
   "projectFilePath": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\DocumentRegister.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\ants\\.nuget\\packages\\ghostscript.net\\1.2.3.1\\ghostscript.net.1.2.3.1.nupkg.sha512",
-    "C:\\Users\\ants\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.755\\microsoft.windows.sdk.buildtools.10.0.22621.755.nupkg.sha512",
-    "C:\\Users\\ants\\.nuget\\packages\\microsoft.windowsappsdk\\1.4.230913002\\microsoft.windowsappsdk.1.4.230913002.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.windows.sdk.buildtools\\10.0.22621.3233\\microsoft.windows.sdk.buildtools.10.0.22621.3233.nupkg.sha512",
+    "C:\\Users\\ants\\.nuget\\packages\\microsoft.windowsappsdk\\1.5.240404000\\microsoft.windowsappsdk.1.5.240404000.nupkg.sha512",
     "C:\\Users\\ants\\.nuget\\packages\\microsoft.netcore.app.runtime.win-x86\\6.0.28\\microsoft.netcore.app.runtime.win-x86.6.0.28.nupkg.sha512",
     "C:\\Users\\ants\\.nuget\\packages\\microsoft.windows.sdk.net.ref\\10.0.19041.31\\microsoft.windows.sdk.net.ref.10.0.19041.31.nupkg.sha512",
     "C:\\Users\\ants\\.nuget\\packages\\microsoft.aspnetcore.app.runtime.win-x86\\6.0.28\\microsoft.aspnetcore.app.runtime.win-x86.6.0.28.nupkg.sha512",

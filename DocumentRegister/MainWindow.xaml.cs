@@ -41,69 +41,62 @@ namespace DocumentRegister
     /// 
     public sealed partial class MainWindow : Window
     {
-        private ObservableCollection<Case> recordings = new ObservableCollection<Case>();
-        List<string> employeeList = new List<string>();
-        public Case currentEmployee { get; set; }
-        int currentIndex = 0;
-        int employeeListLength = 0;
+        int caseIndex = 0;
         List<Case> cases = new List<Case>();
-
+        int selectedIndex = 0;
+        Form currentForm = new Form();
+        string cn = "";
 
         public MainWindow()
         {
             this.InitializeComponent();
-            currentEmployee = new Case();
         }
         private void runScript_Click(object sender, RoutedEventArgs e)
         {
             String path = "C:\\Users\\ants\\Downloads\\employee_pdf_register\\Employment";
-            employeeList.AddRange(Directory.GetDirectories(path));
-            currentIndex = 0;
-            
 
-            for (int i = 0; i < employeeList.Count(); i++)
+            foreach(string p in Directory.GetDirectories(path))
             {
-                if (PathParsing.HasFilesToProcess(Directory.GetDirectories(employeeList[i])))
+                if (PathParsing.HasFilesToProcess(Directory.GetDirectories(p)))
                 {
-                    cases.Add(new Case(employeeList[i]));
-                    //cases.Last().CurrentCase.ParentPath = employeeList[i];
+                    cases.Add(new Case(p));
                 }
             }
-            employeeListLength = cases.Count;
-            currentEmployee = cases[currentIndex];
+
 
             getEmployeeDisplayValues();
         }
 
         private void getEmployeeDisplayValues()
         {
-            //ToBeProcessedList.DeselectRange(new ItemIndexRange(0, 1));
             DisableForm();
 
             ErrorMessage.Text = "";
-            CaseName.Text = cases[currentIndex].CaseName;
-            //CaseName.Text = currentEmployee.ToProcessList[0].Name;
+            CaseName.Text = cases[caseIndex].CaseName;
+            cn = cases[caseIndex].CaseName;
 
-            ToBeProcessedList.ItemsSource = cases[currentIndex].ToProcessList;
-            //BaseExample.ItemsSource = cases[currentIndex].ToProcessList;
+            ToBeProcessedList.DeselectRange(new ItemIndexRange(selectedIndex, 1));
+            ToBeProcessedList.ItemsSource = cases[caseIndex].ToProcessList;
 
-            Description.Text = cases[currentIndex].FormVals.Description;
-            Date.Date = cases[currentIndex].FormVals.Date;
-            To.Text = cases[currentIndex].FormVals.To;
-            From.Text = cases[currentIndex].FormVals.From;
-            Type.Text = cases[currentIndex].FormVals.Type;
-            PrivilegedCheckbox.IsChecked = cases[currentIndex].FormVals.Privilaged == "true" ? true : false;
+            selectedIndex = 0;
+            currentForm = cases[caseIndex].ToProcessList[selectedIndex].PForm;
+
+            Description.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Description;
+            Date.Date = cases[caseIndex].ToProcessList[selectedIndex].PForm.Date;
+            To.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.To;
+            From.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.From;
+            Type.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Type;
+            PrivilegedCheckbox.IsChecked = cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged;
 
 
         }
 
         private void previous_Click(object sender, RoutedEventArgs e)
         {
-            if (currentIndex != 0)
+            selectedIndex = 0;
+            if (caseIndex != 0)
             {
-                currentIndex--;
-                currentEmployee = cases[currentIndex];
-
+                caseIndex--;
                 getEmployeeDisplayValues();
             }
 
@@ -111,11 +104,10 @@ namespace DocumentRegister
 
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            if (currentIndex != employeeListLength - 1)
+            selectedIndex = 0;
+            if (caseIndex != cases.Count - 1)
             {
-                currentIndex++;
-                currentEmployee = cases[currentIndex];
-
+                caseIndex++;
                 getEmployeeDisplayValues();
             }
         }
@@ -132,36 +124,40 @@ namespace DocumentRegister
             }
         }
 
- 
-
         public void SelectFile(object sender, RoutedEventArgs e)
         {
-            // Unlock form
             EnableForm();
 
-            // Prefill form values
+            Description.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Description;
+            Date.Date = cases[caseIndex].ToProcessList[selectedIndex].PForm.Date;
+            To.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.To;
+            From.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.From;
+            Type.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Type;
+            PrivilegedCheckbox.IsChecked = cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged;
 
             PDFPreview.Source = null;
             ErrorMessage.Text = String.Empty;
-            //if (ToBeProcessedList.SelectedItem != null)
-            //{
-            //    switch (Path.GetExtension(ToBeProcessedList.SelectedItem.ToString()))
-            //    {
-            //        case ".pdf":
-            //            OpenPDF(ToBeProcessedList.SelectedItem.ToString());
-            //            break;
-            //        case ".jpg":
-            //            OpenImage(ToBeProcessedList.SelectedItem.ToString());
-            //            break;
-            //        case ".png":
-            //            OpenImage(ToBeProcessedList.SelectedItem.ToString());
-            //            break;
-            //        default:
-            //            ErrorMessage.Text = "Cannot display this file extention type";
-            //            break;
-            //    }
-            //}
-        }
+            if (ToBeProcessedList.SelectedItem != null)
+            {
+                string tempPath = cases[caseIndex].ToProcessList[selectedIndex].Path;
+
+                switch (Path.GetExtension(tempPath))
+                {
+                    case ".pdf":
+                        OpenPDF(tempPath);
+                        break;
+                    case ".jpg":
+                        OpenImage(tempPath);
+                        break;
+                    case ".png":
+                        OpenImage(tempPath);
+                        break;
+                    default:
+                        ErrorMessage.Text = "Cannot display this file extention type";
+                        break;
+                }
+            }
+    }
         public void EnableForm()
         {
             Description.IsEnabled = true;
@@ -225,13 +221,12 @@ namespace DocumentRegister
 
         public void saveExcel(object sender, RoutedEventArgs e)
         {
-            cases[currentIndex].FormVals.Description = Description.Text;
-            cases[currentIndex].FormVals.Date = Date.Date;
-            cases[currentIndex].FormVals.To = To.Text;
-            cases[currentIndex].FormVals.From = From.Text;
-            cases[currentIndex].FormVals.Type = Type.Text;
-            cases[currentIndex].FormVals.Privilaged = PrivilegedCheckbox.IsChecked.Value.ToString();
-
+            cases[caseIndex].ToProcessList[selectedIndex].PForm.Description = Description.Text;
+            cases[caseIndex].ToProcessList[selectedIndex].PForm.Date = Date.Date;
+            cases[caseIndex].ToProcessList[selectedIndex].PForm.To = To.Text;
+            cases[caseIndex].ToProcessList[selectedIndex].PForm.From = From.Text;
+            cases[caseIndex].ToProcessList[selectedIndex].PForm.Type = Type.Text;
+            cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged = PrivilegedCheckbox.IsChecked.Value;
         }
     }
 }

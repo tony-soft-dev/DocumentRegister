@@ -18,6 +18,6 @@ namespace DocumentRegister.Models
         public string To { get; set; }
         public string From { get; set; }
         public string Type { get; set; }
-        public string Privilaged { get; set; }
+        public bool Privilaged { get; set; }
     }
 }

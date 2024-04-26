@@ -56,11 +56,11 @@
             },
             "Microsoft.Windows.SDK.BuildTools": {
               "target": "Package",
-              "version": "[10.0.22621.755, )"
+              "version": "[10.0.22621.3233, )"
             },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
-              "version": "[1.4.230913002, )"
+              "version": "[1.5.240404000, )"
             }
           },
           "imports": [
