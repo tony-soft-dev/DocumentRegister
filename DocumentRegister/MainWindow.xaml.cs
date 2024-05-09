@@ -1,51 +1,25 @@
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
-using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Data;
-using Microsoft.UI.Xaml.Input;
-using Microsoft.UI.Xaml.Media;
-using Microsoft.UI.Xaml.Navigation;
 using System;
-using System.Collections;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
-using System.IO.IsolatedStorage;
-using System.Linq;
-using System.Reflection.Metadata;
-using System.Runtime.InteropServices.WindowsRuntime;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.Data.Pdf;
-using Windows.Foundation;
-using Windows.Foundation.Collections;
-using Windows.Media.Protection.PlayReady;
-using Ghostscript.NET.Rasterizer;
-using Ghostscript.NET.Viewer;
 using Windows.Storage.Streams;
-using Windows.System;
 using Microsoft.UI.Xaml.Media.Imaging;
 using Windows.Storage;
 using System.Collections.ObjectModel;
 using DocumentRegister.Helpers;
 using DocumentRegister.Models;
-
-// To learn more about WinUI, the WinUI project structure,
-// and more about our project templates, see: http://aka.ms/winui-project-info.
+using ClosedXML.Excel;
 
 namespace DocumentRegister
 {
-    /// <summary>
-    /// An empty window that can be used on its own or navigated to within a Frame.
-    /// </summary>
-    /// 
-    public sealed partial class MainWindow : Window
+    public sealed partial class MainWindow : Microsoft.UI.Xaml.Window
     {
         int caseIndex = 0;
         List<Case> cases = new List<Case>();
         int selectedIndex = 0;
-        Form currentForm = new Form();
-        string cn = "";
 
         public MainWindow()
         {
@@ -53,42 +27,34 @@ namespace DocumentRegister
         }
         private void runScript_Click(object sender, RoutedEventArgs e)
         {
-            String path = "C:\\Users\\ants\\Downloads\\employee_pdf_register\\Employment";
+            //String path = "C:\\Users\\ants\\Downloads\\employee_pdf_register\\Employment";
+            //String path = "C:\\Users\\ants\\Downloads\\Employment";
+            String path = "\\server1\\Data\\LAW\\Clients\\Employment";
+            runscript_button.IsEnabled = false;
+            save_button.IsEnabled = true;
 
             foreach(string p in Directory.GetDirectories(path))
             {
                 if (PathParsing.HasFilesToProcess(Directory.GetDirectories(p)))
                 {
                     cases.Add(new Case(p));
-                }
+                }   
             }
 
 
             getEmployeeDisplayValues();
         }
-
         private void getEmployeeDisplayValues()
         {
             DisableForm();
 
             ErrorMessage.Text = "";
             CaseName.Text = cases[caseIndex].CaseName;
-            cn = cases[caseIndex].CaseName;
 
             ToBeProcessedList.DeselectRange(new ItemIndexRange(selectedIndex, 1));
             ToBeProcessedList.ItemsSource = cases[caseIndex].ToProcessList;
 
             selectedIndex = 0;
-            currentForm = cases[caseIndex].ToProcessList[selectedIndex].PForm;
-
-            Description.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Description;
-            Date.Date = cases[caseIndex].ToProcessList[selectedIndex].PForm.Date;
-            To.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.To;
-            From.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.From;
-            Type.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Type;
-            PrivilegedCheckbox.IsChecked = cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged;
-
-
         }
 
         private void previous_Click(object sender, RoutedEventArgs e)
@@ -128,18 +94,19 @@ namespace DocumentRegister
         {
             EnableForm();
 
-            Description.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Description;
-            Date.Date = cases[caseIndex].ToProcessList[selectedIndex].PForm.Date;
-            To.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.To;
-            From.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.From;
-            Type.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Type;
-            PrivilegedCheckbox.IsChecked = cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged;
-
             PDFPreview.Source = null;
             ErrorMessage.Text = String.Empty;
             if (ToBeProcessedList.SelectedItem != null)
             {
+                selectedIndex = ToBeProcessedList.SelectedIndex;
                 string tempPath = cases[caseIndex].ToProcessList[selectedIndex].Path;
+
+                Description.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Description;
+                Date.Date = cases[caseIndex].ToProcessList[selectedIndex].PForm.Date;
+                To.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.To;
+                From.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.From;
+                DocType.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.DocType;
+                PrivilegedCheckbox.IsChecked = cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged;
 
                 switch (Path.GetExtension(tempPath))
                 {
@@ -160,14 +127,16 @@ namespace DocumentRegister
     }
         public void EnableForm()
         {
-            Description.IsEnabled = true;
-            Date.IsEnabled = true;
-            To.IsEnabled = true;
-            From.IsEnabled = true;
-            Type.IsEnabled = true;
-            PrivilegedCheckbox.IsEnabled = true;
-            SaveButton.IsEnabled = true;
-
+            if (!cases[caseIndex].ToProcessList[selectedIndex].PForm.Saved)
+            {
+                Description.IsEnabled = true;
+                Date.IsEnabled = true;
+                To.IsEnabled = true;
+                From.IsEnabled = true;
+                DocType.IsEnabled = true;
+                PrivilegedCheckbox.IsEnabled = true;
+                SaveButton.IsEnabled = true;
+            }
         }
         public void DisableForm()
         {
@@ -175,12 +144,10 @@ namespace DocumentRegister
             Date.IsEnabled = false;
             To.IsEnabled = false;
             From.IsEnabled = false;
-            Type.IsEnabled = false;
+            DocType.IsEnabled = false;
             PrivilegedCheckbox.IsEnabled = false;
             SaveButton.IsEnabled = false;
         }
-
-
         public async void OpenPDF(string path)
         {
             StorageFile f = await
@@ -188,7 +155,6 @@ namespace DocumentRegister
             PdfDocument doc = await PdfDocument.LoadFromFileAsync(f);
             Load(doc);
         }
-
 
         public async void Load(PdfDocument pdfDoc)
         {
@@ -225,8 +191,46 @@ namespace DocumentRegister
             cases[caseIndex].ToProcessList[selectedIndex].PForm.Date = Date.Date;
             cases[caseIndex].ToProcessList[selectedIndex].PForm.To = To.Text;
             cases[caseIndex].ToProcessList[selectedIndex].PForm.From = From.Text;
-            cases[caseIndex].ToProcessList[selectedIndex].PForm.Type = Type.Text;
+            cases[caseIndex].ToProcessList[selectedIndex].PForm.DocType = DocType.SelectedItem.ToString();
             cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged = PrivilegedCheckbox.IsChecked.Value;
+
+            // disable
+            cases[caseIndex].ToProcessList[selectedIndex].PForm.Saved = true;
+            DisableForm();
+        }
+
+        private void SaveChanges(object sender, RoutedEventArgs e)
+        {
+            runscript_button.IsEnabled = true;
+            save_button.IsEnabled = false;
+
+            foreach (Case c in  cases)
+            {
+                for (int i = 0; i < c.ToProcessList.Count; i++)
+                {
+                    if (c.ToProcessList[i].PForm.Saved)
+                    {
+                        string linkText = $"{c.CaseNumber}.{Date.Date.ToString("MMddyy")}.{i+1}";
+                        // Saving to Excel
+                        XLWorkbook wb = new XLWorkbook(c.ExcelPath);
+                        IXLWorksheet ws = wb.Worksheet("Sheet1");
+                        IXLRow lastRow = ws.LastRowUsed();
+                        Form d = c.ToProcessList[i].PForm;
+                        var data = new[]
+                        {
+                            new object[]{ linkText, d.Description, d.Date.Date.ToString("MM/dd/yyyy"), d.To, d.From, d.DocType, d.Privilaged }
+                        };
+                        string destPath = $"{c.ParentPath}/PDF/{c.ToProcessList[i].Name}";
+
+                        lastRow.FirstCell().InsertData(data);
+                        lastRow.FirstCell().SetHyperlink(new XLHyperlink(@$"{destPath}"));
+                        wb.SaveAs(c.ExcelPath);
+
+                        // move file
+                        File.Move(c.ToProcessList[i].Path, destPath);
+                    }
+                }
+            }
         }
     }
 }

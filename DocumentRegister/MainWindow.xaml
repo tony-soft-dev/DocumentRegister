@@ -22,7 +22,7 @@
                     <RelativePanel>
                         <RelativePanel x:Name="List" Margin="20" >
                             <Grid>
-                                <TextBlock x:Name="CaseName" Text="{StaticResource cases[caseIndex].CaseName}" Text="Run script to see.." Typography.Capitals="Normal" FontSize="22" />
+                                <TextBlock x:Name="CaseName" Text="Run script to see.." Typography.Capitals="Normal" FontSize="22" />
                                 <ListView x:Name="ToBeProcessedList" Margin="20" Padding="20" Width="400" SelectionMode="Single" IsItemClickEnabled="False" SelectionChanged="SelectFile" FlowDirection="LeftToRight" >
                                     <ListView.ItemTemplate>
                                         <DataTemplate x:Name="test" x:DataType="local:ToProcess">
@@ -39,17 +39,17 @@
                             <TextBox x:Name="To" IsEnabled="False" Header="To" PlaceholderText="Who it was sent to" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
                             <TextBox x:Name="From" IsEnabled="False" Header="From" PlaceholderText="Who sent it" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="AlphanumericFullWidth" />
                             <RelativePanel>
-                                <ComboBox x:Name="Type" IsEnabled="False" PlaceholderText="Type" Margin="0,24,0,0" MaxWidth="200">
+                                <ComboBox x:Name="DocType" IsEnabled="False" PlaceholderText="Type" Margin="0,24,0,0" MaxWidth="200">
                                     <x:String>Discovery</x:String>
                                     <x:String>General Correspondence</x:String>
                                     <x:String>Internal Forms</x:String>
                                     <x:String>Pleadings</x:String>
                                     <x:String>Evidence</x:String>
                                 </ComboBox>
-                                <CheckBox x:Name="PrivilegedCheckbox" IsEnabled="False" Margin="24,24,0,0" Content="Privilaged" Checked="HandleCheckbox" Unchecked="HandleCheckbox" RelativePanel.RightOf="Type" />
+                                <CheckBox x:Name="PrivilegedCheckbox" IsEnabled="False" Margin="24,24,0,0" Content="Privilaged" Checked="HandleCheckbox" Unchecked="HandleCheckbox" RelativePanel.RightOf="DocType" />
                             </RelativePanel>
                             <Button x:Name="SaveButton" IsEnabled="False" Margin="24,24,0,0"  Width="100" Click="saveExcel">Save</Button>
-
+                            <TextBlock x:Name="Saved" Foreground="Green" />
                         </StackPanel>
 
                         <StackPanel x:Name="Display" Margin="20" RelativePanel.RightOf="Form">
@@ -62,18 +62,15 @@
                     
                 </Grid>
             </PivotItem>
-
-            <PivotItem Header="Settings"/>
+            
             <Pivot.RightHeader>
                 <CommandBar OverflowButtonVisibility="Collapsed" Background="Transparent">
                     <AppBarButton x:Name="prevButton" Icon="Previous" Click="previous_Click"/>
                     <AppBarSeparator/>
-                    <AppBarButton x:Name="myButton" Icon="Play" Click="runScript_Click"/>
+                    <AppBarButton x:Name="runscript_button" Icon="Play" Click="runScript_Click"/>
+                    <AppBarButton x:Name="save_button" Icon="Save" IsEnabled="False" Click="SaveChanges" />
                     <AppBarSeparator/>
                     <AppBarButton x:Name="nextButton" Icon="Next" Click="next_Click"/>
-                    <AppBarSeparator/>
-                    <AppBarButton Icon="Delete"/>
-                    <AppBarSeparator/>
                 </CommandBar>
             </Pivot.RightHeader>
         </Pivot>

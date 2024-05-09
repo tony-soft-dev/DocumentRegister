@@ -1,10 +1,6 @@
 ﻿using Microsoft.UI.Xaml.Media.Imaging;
 using System;
-using System.Collections.Generic;
 using System.Collections.ObjectModel;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Windows.Data.Pdf;
 using Windows.Storage.Streams;
 using Windows.Storage;
@@ -33,7 +29,6 @@ namespace DocumentRegister.Helpers
                 await page.RenderToStreamAsync(stream);
                 await image.SetSourceAsync(stream);
             }
-            //PDFPreview.Source = image;
         }
 
         public ObservableCollection<BitmapImage> PdfPages
@@ -45,10 +40,7 @@ namespace DocumentRegister.Helpers
         public void OpenImage(string path)
         {
             BitmapImage bitmapImage = new BitmapImage();
-            //bitmapImage.UriSource = new Uri(PDFPreview.BaseUri, path);
             bitmapImage.UriSource = new Uri(path);
-
-            //PDFPreview.Source = bitmapImage;
         }
     }
 }
