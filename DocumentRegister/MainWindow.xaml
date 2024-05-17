@@ -34,22 +34,23 @@
                         </RelativePanel>
 
                         <StackPanel x:Name="Form" Margin="20" RelativePanel.RightOf="List" >
-                            <TextBox x:Name="Description"  Text="" IsEnabled="False" Header="Description" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
-                            <DatePicker x:Name="Date" IsEnabled="False" Header="Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>
-                            <TextBox x:Name="To" IsEnabled="False" Header="To" PlaceholderText="Who it was sent to" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
-                            <TextBox x:Name="From" IsEnabled="False" Header="From" PlaceholderText="Who sent it" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="AlphanumericFullWidth" />
+                            <TextBox x:Name="Description"  Text="" Header="Description" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
+                            <DatePicker x:Name="Date" Header="Date" HorizontalAlignment="Left" Margin="0,24,0,0"></DatePicker>
+                            <TextBox x:Name="To" Header="To" PlaceholderText="Who it was sent to" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
+                            <TextBox x:Name="From" Header="From" PlaceholderText="Who sent it" Margin="0,24,0,0" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="AlphanumericFullWidth" />
                             <RelativePanel>
-                                <ComboBox x:Name="DocType" IsEnabled="False" PlaceholderText="Type" Margin="0,24,0,0" MaxWidth="200">
+                                <ComboBox x:Name="DocType" SelectedIndex="0" PlaceholderText="Type" Margin="0,24,0,0" MaxWidth="200">
+                                    <x:String>Misc.</x:String>
                                     <x:String>Discovery</x:String>
                                     <x:String>General Correspondence</x:String>
                                     <x:String>Internal Forms</x:String>
                                     <x:String>Pleadings</x:String>
                                     <x:String>Evidence</x:String>
                                 </ComboBox>
-                                <CheckBox x:Name="PrivilegedCheckbox" IsEnabled="False" Margin="24,24,0,0" Content="Privilaged" Checked="HandleCheckbox" Unchecked="HandleCheckbox" RelativePanel.RightOf="DocType" />
+                                <CheckBox x:Name="PrivilegedCheckbox" Margin="24,24,0,0" Content="Privilaged" Checked="HandleCheckbox" Unchecked="HandleCheckbox" RelativePanel.RightOf="DocType" />
                             </RelativePanel>
-                            <Button x:Name="SaveButton" IsEnabled="False" Margin="24,24,0,0"  Width="100" Click="saveExcel">Save</Button>
-                            <TextBlock x:Name="Saved" Foreground="Green" />
+                            <Button x:Name="SaveButton" Margin="24,24,0,0"  Width="100" Click="saveExcel">Save</Button>
+                            <TextBlock x:Name="Saved" Foreground="Green" FontSize="18"/>
                         </StackPanel>
 
                         <StackPanel x:Name="Display" Margin="20" RelativePanel.RightOf="Form">

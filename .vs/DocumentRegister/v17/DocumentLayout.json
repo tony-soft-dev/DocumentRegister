@@ -3,24 +3,34 @@
   "WorkspaceRootPath": "C:\\Users\\ants\\workspace\\DocumentRegister\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\models\\form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\models\\form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ants\\.nuget\\packages\\epplus\\7.1.2\\readme.txt||{8B382828-6202-11D1-8870-0000F87579D2}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\ants\\AppData\\Roaming\\Microsoft\\UserSecrets\\1480f8ca-fa1e-42d6-b07c-b97944c1e537\\secrets.json||{90A6B3A7-C1A3-4009-A288-E2FF89E96FA0}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\models\\case.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\models\\case.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\helpers\\pathparsing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\helpers\\pathparsing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\models\\form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\models\\form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\properties\\publishprofiles\\win10-arm64.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\properties\\publishprofiles\\win10-arm64.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
       "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\helpers\\viewfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -38,39 +48,39 @@
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "PathParsing.cs",
-              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\PathParsing.cs",
-              "RelativeDocumentMoniker": "DocumentRegister\\Helpers\\PathParsing.cs",
-              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\PathParsing.cs",
-              "RelativeToolTip": "DocumentRegister\\Helpers\\PathParsing.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABIAAAAgAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T04:03:54.039Z",
+              "DocumentIndex": 7,
+              "Title": "win10-arm64.pubxml",
+              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Properties\\PublishProfiles\\win10-arm64.pubxml",
+              "RelativeDocumentMoniker": "DocumentRegister\\Properties\\PublishProfiles\\win10-arm64.pubxml",
+              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Properties\\PublishProfiles\\win10-arm64.pubxml",
+              "RelativeToolTip": "DocumentRegister\\Properties\\PublishProfiles\\win10-arm64.pubxml",
+              "ViewState": "AQIAAAAAAAAAAAAAAABOwAcAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
+              "WhenOpened": "2024-05-09T23:41:15.061Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 8,
               "Title": "ViewFile.cs",
               "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\ViewFile.cs",
               "RelativeDocumentMoniker": "DocumentRegister\\Helpers\\ViewFile.cs",
               "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\ViewFile.cs",
               "RelativeToolTip": "DocumentRegister\\Helpers\\ViewFile.cs",
-              "ViewState": "AQIAABYAAAAA0MzMzMwWwC8AAAAAAAAA",
+              "ViewState": "AQIAAAsAAAAAAAAAAAA0wCYAAAAAAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-01T03:20:25.387Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 1,
               "Title": "MainWindow.xaml",
               "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml",
               "RelativeDocumentMoniker": "DocumentRegister\\MainWindow.xaml",
               "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml",
               "RelativeToolTip": "DocumentRegister\\MainWindow.xaml",
-              "ViewState": "AQIAAC0AAAAAAAAAAAAAAEEAAAAfAAAA",
+              "ViewState": "AQIAAC0AAAAAAAAAAAAAADQAAABYAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
               "WhenOpened": "2024-04-13T20:15:21.028Z",
               "EditorCaption": ""
@@ -79,7 +89,7 @@
         },
         {
           "DockedWidth": 202,
-          "SelectedChildIndex": 3,
+          "SelectedChildIndex": 5,
           "Children": [
             {
               "$type": "Bookmark",
@@ -91,39 +101,78 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Form.cs",
-              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Form.cs",
-              "RelativeDocumentMoniker": "DocumentRegister\\Models\\Form.cs",
-              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Form.cs",
-              "RelativeToolTip": "DocumentRegister\\Models\\Form.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAABQAAAAZAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T22:33:53.525Z",
+              "DocumentIndex": 3,
+              "Title": "readme.txt",
+              "DocumentMoniker": "C:\\Users\\ants\\.nuget\\packages\\epplus\\7.1.2\\readme.txt",
+              "RelativeDocumentMoniker": "..\\..\\.nuget\\packages\\epplus\\7.1.2\\readme.txt",
+              "ToolTip": "C:\\Users\\ants\\.nuget\\packages\\epplus\\7.1.2\\readme.txt",
+              "RelativeToolTip": "..\\..\\.nuget\\packages\\epplus\\7.1.2\\readme.txt",
+              "ViewState": "AQIAAAcAAAAAAAAAAABEwAAAAAAAAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003109|",
+              "WhenOpened": "2024-05-16T23:51:58.938Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 4,
+              "Title": "secrets.json",
+              "DocumentMoniker": "C:\\Users\\ants\\AppData\\Roaming\\Microsoft\\UserSecrets\\1480f8ca-fa1e-42d6-b07c-b97944c1e537\\secrets.json",
+              "RelativeDocumentMoniker": "..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\1480f8ca-fa1e-42d6-b07c-b97944c1e537\\secrets.json",
+              "ToolTip": "C:\\Users\\ants\\AppData\\Roaming\\Microsoft\\UserSecrets\\1480f8ca-fa1e-42d6-b07c-b97944c1e537\\secrets.json",
+              "RelativeToolTip": "..\\..\\AppData\\Roaming\\Microsoft\\UserSecrets\\1480f8ca-fa1e-42d6-b07c-b97944c1e537\\secrets.json",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAAAAAABAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001642|",
+              "WhenOpened": "2024-05-15T05:50:09.116Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 2,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\App.xaml.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\App.xaml.cs",
+              "RelativeToolTip": "DocumentRegister\\App.xaml.cs",
+              "ViewState": "AQIAAAkAAAAAAAAAAAAAACIAAAAXAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-05-15T00:14:53.198Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
               "Title": "MainWindow.xaml.cs",
               "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml.cs",
               "RelativeDocumentMoniker": "DocumentRegister\\MainWindow.xaml.cs",
               "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml.cs",
               "RelativeToolTip": "DocumentRegister\\MainWindow.xaml.cs",
-              "ViewState": "AQIAACcAAAAAAAAAAAAYwDwAAAANAAAA",
+              "ViewState": "AQIAAMEAAAAAAAAAAAA/wNAAAABEAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-04-13T20:25:33.721Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 6,
+              "Title": "Form.cs",
+              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Form.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\Models\\Form.cs",
+              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Form.cs",
+              "RelativeToolTip": "DocumentRegister\\Models\\Form.cs",
+              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-04-24T22:33:53.525Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
               "Title": "Case.cs",
               "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Case.cs",
               "RelativeDocumentMoniker": "DocumentRegister\\Models\\Case.cs",
               "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Case.cs",
               "RelativeToolTip": "DocumentRegister\\Models\\Case.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAgwBEAAAAPAAAA",
+              "ViewState": "AQIAADQAAAAAAAAAAAAkwFAAAAAeAAAA",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2024-03-29T21:47:33.133Z",
               "EditorCaption": ""

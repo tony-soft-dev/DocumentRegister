@@ -1,4 +1,4 @@
-<Project Sdk="Microsoft.NET.Sdk">
+﻿<Project Sdk="Microsoft.NET.Sdk">
   <PropertyGroup>
     <OutputType>WinExe</OutputType>
     <TargetFramework>net6.0-windows10.0.19041.0</TargetFramework>
@@ -10,6 +10,17 @@
     <PublishProfile>win10-$(Platform).pubxml</PublishProfile>
     <UseWinUI>true</UseWinUI>
     <EnableMsixTooling>true</EnableMsixTooling>
+    <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
+    <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
+    <PackageCertificateThumbprint>6C4C1CA5F15643D0180CB8C46AD0CE9A1C3A7E01</PackageCertificateThumbprint>
+    <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
+    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
+    <GenerateTestArtifacts>True</GenerateTestArtifacts>
+    <AppxBundle>Never</AppxBundle>
+    <AppInstallerUri>C:\Users\ants\Downloads</AppInstallerUri>
+    <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
+    <UserSecretsId>1480f8ca-fa1e-42d6-b07c-b97944c1e537</UserSecretsId>
   </PropertyGroup>
 
   <ItemGroup>
@@ -25,9 +36,11 @@
   <ItemGroup>
     <PackageReference Include="ClosedXML" Version="0.102.2" />
     <PackageReference Include="Ghostscript.NET" Version="1.2.3.1" />
+    <PackageReference Include="Microsoft.Extensions.Configuration.UserSecrets" Version="6.0.1" />
     <PackageReference Include="Microsoft.Office.Interop.Excel" Version="15.0.4795.1001" />
-    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240404000" />
+    <PackageReference Include="Microsoft.WindowsAppSDK" Version="1.5.240428000" />
     <PackageReference Include="Microsoft.Windows.SDK.BuildTools" Version="10.0.22621.3233" />
+    <PackageReference Include="Syncfusion.XlsIO.NET" Version="25.2.4" />
     <Manifest Include="$(ApplicationManifest)" />
   </ItemGroup>
 
