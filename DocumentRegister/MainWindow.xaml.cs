@@ -11,15 +11,8 @@ using Windows.Storage;
 using System.Collections.ObjectModel;
 using DocumentRegister.Helpers;
 using DocumentRegister.Models;
-using Syncfusion.XlsIO;
-using System.Reflection;
-using Windows.Storage.Pickers;
-using DocumentFormat.OpenXml.Packaging;
-using DocumentFormat.OpenXml.Spreadsheet;
-using DocumentFormat.OpenXml;
-using System.Linq;
-using System.Threading.Tasks;
 using ClosedXML.Excel;
+using System.Linq;
 
 namespace DocumentRegister
 {
@@ -28,6 +21,7 @@ namespace DocumentRegister
         int caseIndex = 0;
         List<Case> cases = new List<Case>();
         int selectedIndex = 0;
+        List<string> processErrors = new List<string>();
 
         public MainWindow()
         {
@@ -35,11 +29,9 @@ namespace DocumentRegister
         }
         private void runScript_Click(object sender, RoutedEventArgs e)
         {
-            //String path = "C:\\Users\\ants\\Downloads\\employee_pdf_register\\Employment";
-            String path = "C:\\Users\\ants\\Downloads\\Employment";
-            //String path = "\\server1\\Data\\LAW\\Clients\\Employment";
-            runscript_button.IsEnabled = false;
-            save_button.IsEnabled = true;
+            //String path = "C:\\Users\\ants\\Downloads\\Employment";
+            String path = "O:\\LAW\\Clients\\Employment";
+            ChangeNavigationAccess();
 
             foreach(string p in Directory.GetDirectories(path))
             {
@@ -48,7 +40,6 @@ namespace DocumentRegister
                     cases.Add(new Case(p));
                 }   
             }
-
 
             getEmployeeDisplayValues();
         }
@@ -61,26 +52,27 @@ namespace DocumentRegister
             ToBeProcessedList.ItemsSource = cases[caseIndex].ToProcessList;
 
             selectedIndex = 0;
+            ToBeProcessedList.SelectedIndex = selectedIndex; 
         }
 
         private void previous_Click(object sender, RoutedEventArgs e)
         {
-            selectedIndex = 0;
             if (caseIndex != 0)
             {
                 caseIndex--;
                 getEmployeeDisplayValues();
+                ToBeProcessedList.SelectedIndex = selectedIndex;
             }
 
         }
 
         private void next_Click(object sender, RoutedEventArgs e)
         {
-            selectedIndex = 0;
             if (caseIndex != cases.Count - 1)
             {
                 caseIndex++;
                 getEmployeeDisplayValues();
+                ToBeProcessedList.SelectedIndex = selectedIndex;
             }
         }
 
@@ -98,8 +90,6 @@ namespace DocumentRegister
 
         public void SelectFile(object sender, RoutedEventArgs e)
         {
-
-
             PDFPreview.Source = null;
             ErrorMessage.Text = String.Empty;
             if (ToBeProcessedList.SelectedItem != null)
@@ -114,12 +104,7 @@ namespace DocumentRegister
                     Saved.Text = "";
                 }
 
-                Description.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Description;
-                Date.Date = cases[caseIndex].ToProcessList[selectedIndex].PForm.Date;
-                To.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.To;
-                From.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.From;
-                DocType.SelectedItem = cases[caseIndex].ToProcessList[selectedIndex].PForm.DocType;
-                PrivilegedCheckbox.IsChecked = cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged;
+                FillFormValues();
                 string tempPath = cases[caseIndex].ToProcessList[selectedIndex].Path;
 
                 switch (Path.GetExtension(tempPath))
@@ -135,11 +120,37 @@ namespace DocumentRegister
                         break;
                     default:
                         ErrorMessage.Text = "Cannot display this file extention type";
+                        //OpenPDF(tempPath);
                         break;
                 }
-
             }
-    }
+        }
+        private void FillFormValues()
+        {
+            Description.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Description;
+            Date.Date = cases[caseIndex].ToProcessList[selectedIndex].PForm.Date;
+            To.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.To;
+            From.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.From;
+            DocType.SelectedItem = cases[caseIndex].ToProcessList[selectedIndex].PForm.DocType;
+            PrivilegedCheckbox.IsChecked = cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged;
+        }
+        public void ChangeNavigationAccess()
+        {
+            if (save_button.IsEnabled)
+            {
+                runscript_button.IsEnabled = true;
+                save_button.IsEnabled = false;
+                
+                nextButton.IsEnabled = false;
+                prevButton.IsEnabled = false;
+            } else
+            {
+                runscript_button.IsEnabled = false;
+                save_button.IsEnabled = true;
+                nextButton.IsEnabled = true;
+                prevButton.IsEnabled = true;
+            }
+        }
         public async void OpenPDF(string path)
         {
             StorageFile f = await
@@ -147,7 +158,6 @@ namespace DocumentRegister
             PdfDocument doc = await PdfDocument.LoadFromFileAsync(f);
             Load(doc);
         }
-
         public async void Load(PdfDocument pdfDoc)
         {
             PdfPages.Clear();
@@ -162,13 +172,11 @@ namespace DocumentRegister
             }
             PDFPreview.Source = image;
         }
-
         public static ObservableCollection<BitmapImage> PdfPages
         {
             get;
             set;
         } = new ObservableCollection<BitmapImage>();
-
         public void OpenImage(string path)
         {
             BitmapImage bitmapImage = new BitmapImage();
@@ -176,7 +184,6 @@ namespace DocumentRegister
 
             PDFPreview.Source = bitmapImage;
         }
-
         public void saveExcel(object sender, RoutedEventArgs e)
         {
             cases[caseIndex].ToProcessList[selectedIndex].PForm.Description = Description.Text;
@@ -190,11 +197,9 @@ namespace DocumentRegister
             cases[caseIndex].ToProcessList[selectedIndex].PForm.Saved = true;
             Saved.Text = "(SAVED) -- Will process when you run script to save";
         }
-
         private void SaveChanges(object sender, RoutedEventArgs e)
         {
-            runscript_button.IsEnabled = true;
-            save_button.IsEnabled = false;
+            ChangeNavigationAccess();
 
             foreach (Case c in  cases)
             {
@@ -202,26 +207,55 @@ namespace DocumentRegister
                 {
                     if (c.ToProcessList[i].PForm.Saved)
                     {
-                        XLWorkbook wb = new XLWorkbook(c.ExcelPath);
-                        IXLWorksheet ws = wb.Worksheet("Sheet1");
-                        string linkText = $"{c.CaseNumber}.{Date.Date.ToString("MMddyy")}.{i + 1}";
-                        
-                        IXLRow lastRow = ws.LastRowUsed().RowBelow();
-                        Form d = c.ToProcessList[i].PForm;
-                        var data = new[]
+                        try
                         {
+                            XLWorkbook wb = new XLWorkbook(c.ExcelPath);
+                            IXLWorksheet ws = wb.Worksheet("Sheet1");
+                            string linkText = $"{c.CaseNumber}.{Date.Date.ToString("MMddyy")}.{i + 1}";
+
+                            IXLRow lastRow = ws.LastRowUsed().RowBelow();
+                            Form d = c.ToProcessList[i].PForm;
+                            var data = new[]
+                            {
                             new object[]{ linkText, d.Description, d.Date.Date.ToString("MM/dd/yyyy"), d.To, d.From, d.DocType, d.Privilaged }
                         };
-                        string destPath = $"{c.ParentPath}/PDF/{c.ToProcessList[i].Name}";
+                            string destPath = $"{c.ParentPath}/PDF/{c.ToProcessList[i].Name}";
 
-                        lastRow.FirstCell().InsertData(data);
-                        lastRow.FirstCell().SetHyperlink(new XLHyperlink(@$"{destPath}"));
+                            lastRow.FirstCell().InsertData(data);
+                            lastRow.FirstCell().SetHyperlink(new XLHyperlink(@$"{destPath}"));
 
-                        wb.SaveAs(c.ExcelPath);
-                        // move file
-                        File.Move(c.ToProcessList[i].Path, destPath);
+                            wb.SaveAs(c.ExcelPath);
+                            // move file
+                            File.Move(c.ToProcessList[i].Path, destPath);
+
+                        } catch (Exception ex)
+                        {
+                            processErrors.Add(c.ToProcessList[i].Path);
+                        }
                     }
                 }
+            }
+            ShowPopupOffsetClicked();
+            ClearValues();
+        }
+        private void ClearValues()
+        {
+            cases.Clear();
+        }
+        // Handles the Click event on the Button inside the Popup control and 
+        // closes the Popup. 
+        private void ClosePopupClicked(object sender, RoutedEventArgs e)
+        {
+            // if the Popup is open, then close it 
+            if (StandardPopup.IsOpen) { StandardPopup.IsOpen = false; }
+        }
+        // Handles the Click event on the Button on the page and opens the Popup. 
+        private void ShowPopupOffsetClicked()
+        {
+            ErrorList.ItemsSource = processErrors;
+            // open the Popup if it isn't open already 
+            if (!StandardPopup.IsOpen) { 
+                StandardPopup.IsOpen = true; 
             }
         }
     }

@@ -66,15 +66,30 @@
             
             <Pivot.RightHeader>
                 <CommandBar OverflowButtonVisibility="Collapsed" Background="Transparent">
-                    <AppBarButton x:Name="prevButton" Icon="Previous" Click="previous_Click"/>
+                    <AppBarButton x:Name="prevButton" IsEnabled="False" Icon="Previous" Click="previous_Click"/>
                     <AppBarSeparator/>
                     <AppBarButton x:Name="runscript_button" Icon="Play" Click="runScript_Click"/>
                     <AppBarButton x:Name="save_button" Icon="Save" IsEnabled="False" Click="SaveChanges" />
                     <AppBarSeparator/>
-                    <AppBarButton x:Name="nextButton" Icon="Next" Click="next_Click"/>
+                    <AppBarButton x:Name="nextButton" IsEnabled="False" Icon="Next" Click="next_Click"/>
                 </CommandBar>
             </Pivot.RightHeader>
         </Pivot>
+        <Popup VerticalOffset="10" HorizontalOffset="200" x:Name="StandardPopup">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+                Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+                BorderThickness="2" >
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <RelativePanel Margin="20">
+                        <TextBlock x:Name="ErrorTitle" Margin="0,24,0,0" Text="The following couldn't be processed" Typography.Capitals="Normal" FontSize="22" />
+                    </RelativePanel>
+                    <RelativePanel Margin="20">
+                        <ListView x:Name="ErrorList" Margin="0,24,0,0" IsItemClickEnabled="False"/>
+                    </RelativePanel>
+                    <Button Content="Close" Click="ClosePopupClicked" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </Popup>
     </Grid>
 
 </Window>

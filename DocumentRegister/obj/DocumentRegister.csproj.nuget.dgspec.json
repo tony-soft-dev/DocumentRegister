@@ -60,7 +60,7 @@
             },
             "Microsoft.Extensions.Configuration.UserSecrets": {
               "target": "Package",
-              "version": "[6.0.1, )"
+              "version": "[8.0.0, )"
             },
             "Microsoft.Office.Interop.Excel": {
               "target": "Package",
@@ -68,7 +68,7 @@
             },
             "Microsoft.Windows.SDK.BuildTools": {
               "target": "Package",
-              "version": "[10.0.22621.3233, )"
+              "version": "[10.0.26100.1, )"
             },
             "Microsoft.WindowsAppSDK": {
               "target": "Package",
@@ -76,7 +76,7 @@
             },
             "Syncfusion.XlsIO.NET": {
               "target": "Package",
-              "version": "[25.2.4, )"
+              "version": "[25.2.5, )"
             }
           },
           "imports": [
@@ -101,6 +101,10 @@
             },
             {
               "name": "Microsoft.AspNetCore.App.Runtime.win-x86",
+              "version": "[6.0.28, 6.0.28]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Crossgen2.win-x64",
               "version": "[6.0.28, 6.0.28]"
             },
             {
