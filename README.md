@@ -1,7 +1,5 @@
 # Document Register
 
-[![Contributors][contributors-shield]][https://github.com/tony-soft-dev]
-
 <!-- TABLE OF CONTENTS -->
 <details>
   <summary>Table of Contents</summary>
@@ -27,7 +25,7 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-<img src="/DocumentRegister/Assets/screenshot.png" alt="screenshot" width="200" height="100">
+<img src="/DocumentRegister/Assets/screenshot.png" alt="screenshot">
 
 DocumentRegister is meant to help automate some administrative tasks and organize a custom folder structure.
 A first script is made to see what required files need to be registered and displays that list to prep for saving.
@@ -40,7 +38,7 @@ When completion of the information to save files is completed, an additional scr
 
 ### Built With
 
-* WinUI 3[https://learn.microsoft.com/en-us/windows/apps/winui/winui3/]
+* [WinUI 3](https://learn.microsoft.com/en-us/windows/apps/winui/winui3/)
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
