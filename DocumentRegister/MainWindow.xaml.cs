@@ -13,6 +13,7 @@ using DocumentRegister.Helpers;
 using DocumentRegister.Models;
 using ClosedXML.Excel;
 using System.Linq;
+using Windows.Media.Protection.PlayReady;
 
 namespace DocumentRegister
 {
@@ -22,28 +23,54 @@ namespace DocumentRegister
         List<Case> cases = new List<Case>();
         int selectedIndex = 0;
         List<string> processErrors = new List<string>();
+        //string employeeFolderPath = "O:\\LAW\\Clients\\Employment";
+        string employeeFolderPath = "C:\\Users\\gato\\Downloads\\EmploymentCopy";
 
         public MainWindow()
         {
             this.InitializeComponent();
+            EmployeePath.Text = employeeFolderPath;
         }
-        private void runScript_Click(object sender, RoutedEventArgs e)
-        {
-            //String path = "C:\\Users\\ants\\Downloads\\Employment";
-            String path = "O:\\LAW\\Clients\\Employment";
-            ChangeNavigationAccess();
 
-            foreach(string p in Directory.GetDirectories(path))
+        private void SavePath(object sender, RoutedEventArgs e)
+        {
+            employeeFolderPath = EmployeePath.Text;
+        }
+
+        private void RunCleanFolders(object sender, RoutedEventArgs e)
+        {
+            string[] parentFolders = Directory.GetDirectories(employeeFolderPath);
+            parentFolderListFix.ItemsSource = CleanFolders.GetFileNames(parentFolders);
+
+        }
+
+        private void EditFolderOrFileName(object sender, RoutedEventArgs e) { }
+
+        private void GetWorkingDirectories(object sender, RoutedEventArgs e)
+        {
+            ChangeNavigationAccess();
+            try
             {
-                if (PathParsing.HasFilesToProcess(Directory.GetDirectories(p)))
+                foreach (string p in Directory.GetDirectories(employeeFolderPath))
                 {
-                    cases.Add(new Case(p));
-                }   
+                    if (PathParsing.HasFilesToProcess(Directory.GetDirectories(p)))
+                    {
+                        cases.Add(new Case(p));
+                    }
+                }
+            }
+            catch (Exception exception)
+            {
+                ThrownError.IsOpen = true;   
+                ThrowErrorMessage.Text = exception.Message;
+                
+                throw;
             }
 
-            getEmployeeDisplayValues();
+
+            GetEmployeeDisplayValues();
         }
-        private void getEmployeeDisplayValues()
+        private void GetEmployeeDisplayValues()
         {
             ErrorMessage.Text = "";
             CaseName.Text = cases[caseIndex].CaseName;
@@ -55,23 +82,23 @@ namespace DocumentRegister
             ToBeProcessedList.SelectedIndex = selectedIndex; 
         }
 
-        private void previous_Click(object sender, RoutedEventArgs e)
+        private void PreviousClick(object sender, RoutedEventArgs e)
         {
             if (caseIndex != 0)
             {
                 caseIndex--;
-                getEmployeeDisplayValues();
+                GetEmployeeDisplayValues();
                 ToBeProcessedList.SelectedIndex = selectedIndex;
             }
 
         }
 
-        private void next_Click(object sender, RoutedEventArgs e)
+        private void NextClick(object sender, RoutedEventArgs e)
         {
             if (caseIndex != cases.Count - 1)
             {
                 caseIndex++;
-                getEmployeeDisplayValues();
+                GetEmployeeDisplayValues();
                 ToBeProcessedList.SelectedIndex = selectedIndex;
             }
         }
@@ -127,26 +154,28 @@ namespace DocumentRegister
         }
         private void FillFormValues()
         {
-            Description.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.Description;
+            Description.Text = string.IsNullOrEmpty(cases[caseIndex].ToProcessList[selectedIndex].PForm.Description) ? 
+                Path.GetFileNameWithoutExtension(cases[caseIndex].ToProcessList[selectedIndex].Name) : 
+                cases[caseIndex].ToProcessList[selectedIndex].PForm.Description;
             Date.Date = cases[caseIndex].ToProcessList[selectedIndex].PForm.Date;
             To.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.To;
             From.Text = cases[caseIndex].ToProcessList[selectedIndex].PForm.From;
             DocType.SelectedItem = cases[caseIndex].ToProcessList[selectedIndex].PForm.DocType;
-            PrivilegedCheckbox.IsChecked = cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged;
+            PrivilegedCheckbox.IsChecked = cases[caseIndex].ToProcessList[selectedIndex].PForm.Privileged;
         }
         public void ChangeNavigationAccess()
         {
-            if (save_button.IsEnabled)
+            if (saveButton.IsEnabled)
             {
-                runscript_button.IsEnabled = true;
-                save_button.IsEnabled = false;
+                getDirectoriesButton.IsEnabled = true;
+                saveButton.IsEnabled = false;
                 
                 nextButton.IsEnabled = false;
                 prevButton.IsEnabled = false;
             } else
             {
-                runscript_button.IsEnabled = false;
-                save_button.IsEnabled = true;
+                getDirectoriesButton.IsEnabled = false;
+                saveButton.IsEnabled = true;
                 nextButton.IsEnabled = true;
                 prevButton.IsEnabled = true;
             }
@@ -184,14 +213,14 @@ namespace DocumentRegister
 
             PDFPreview.Source = bitmapImage;
         }
-        public void saveExcel(object sender, RoutedEventArgs e)
+        public void SaveExcel(object sender, RoutedEventArgs e)
         {
             cases[caseIndex].ToProcessList[selectedIndex].PForm.Description = Description.Text;
             cases[caseIndex].ToProcessList[selectedIndex].PForm.Date = Date.Date;
             cases[caseIndex].ToProcessList[selectedIndex].PForm.To = To.Text;
             cases[caseIndex].ToProcessList[selectedIndex].PForm.From = From.Text;
             cases[caseIndex].ToProcessList[selectedIndex].PForm.DocType = DocType.SelectedItem.ToString();
-            cases[caseIndex].ToProcessList[selectedIndex].PForm.Privilaged = PrivilegedCheckbox.IsChecked.Value;
+            cases[caseIndex].ToProcessList[selectedIndex].PForm.Privileged = PrivilegedCheckbox.IsChecked.Value;
 
             // disable
             cases[caseIndex].ToProcessList[selectedIndex].PForm.Saved = true;
@@ -217,7 +246,7 @@ namespace DocumentRegister
                             Form d = c.ToProcessList[i].PForm;
                             var data = new[]
                             {
-                            new object[]{ linkText, d.Description, d.Date.Date.ToString("MM/dd/yyyy"), d.To, d.From, d.DocType, d.Privilaged }
+                            new object[]{ linkText, d.Description, d.Date.Date.ToString("MM/dd/yyyy"), d.To, d.From, d.DocType, d.Privileged }
                         };
                             string destPath = $"{c.ParentPath}/PDF/{c.ToProcessList[i].Name}";
 
@@ -256,6 +285,22 @@ namespace DocumentRegister
             // open the Popup if it isn't open already 
             if (!StandardPopup.IsOpen) { 
                 StandardPopup.IsOpen = true; 
+            }
+        }
+
+        private void CloseError(object sender, RoutedEventArgs e)
+        {
+            // if the Popup is open, then close it 
+            if (ThrownError.IsOpen) { ThrownError.IsOpen = false; }
+        }
+
+        private void ToggleNewClientWindow(object sender, RoutedEventArgs e)
+        {
+            if (newClientPopup.IsOpen) { 
+                newClientPopup.IsOpen = false; 
+            } else
+            {
+                newClientPopup.IsOpen = true;
             }
         }
     }

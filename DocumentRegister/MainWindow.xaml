@@ -9,7 +9,7 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Pivot Background="{ThemeResource SystemControlAccentAcrylicWindowAccentMediumHighBrush}" >
+        <Pivot Background="{ThemeResource SystemBaseLowColor}" >
             <Pivot.TitleTemplate>
                 <DataTemplate>
                     <Grid>
@@ -18,7 +18,7 @@
                 </DataTemplate>
             </Pivot.TitleTemplate>
             <PivotItem Header="Register" Margin="0">
-                <Grid Background="White">
+                <Grid>
                     <RelativePanel>
                         <RelativePanel x:Name="List" Margin="20" >
                             <Grid>
@@ -47,9 +47,9 @@
                                     <x:String>Pleadings</x:String>
                                     <x:String>Evidence</x:String>
                                 </ComboBox>
-                                <CheckBox x:Name="PrivilegedCheckbox" Margin="24,24,0,0" Content="Privilaged" Checked="HandleCheckbox" Unchecked="HandleCheckbox" RelativePanel.RightOf="DocType" />
+                                <CheckBox x:Name="PrivilegedCheckbox" Margin="24,24,0,0" Content="Privileged" Checked="HandleCheckbox" Unchecked="HandleCheckbox" RelativePanel.RightOf="DocType" />
                             </RelativePanel>
-                            <Button x:Name="SaveButton" Margin="24,24,0,0"  Width="100" Click="saveExcel">Save</Button>
+                            <Button x:Name="SaveButton" Margin="24,24,0,0"  Width="100" Click="SaveExcel">Save</Button>
                             <TextBlock x:Name="Saved" Foreground="Green" FontSize="18"/>
                         </StackPanel>
 
@@ -64,17 +64,53 @@
                 </Grid>
             </PivotItem>
             
+            <PivotItem Header="Settings" Margin="10">
+                <RelativePanel >
+                    <StackPanel x:Name="SettingsActions" Margin="20">
+                        <StackPanel x:Name="SettingsPanel" Margin="10 20" >
+                            <TextBox x:Name="EmployeePath" Header="Employee Folder Path" Margin="10,24,10,10" MaxLength="50" Width="400" HorizontalAlignment="Left" InputScope="Default" />
+                            <Button x:Name="SaveSettings" Margin="10,24,0,0"  Width="100" Click="SavePath">Save</Button>
+                        </StackPanel>
+                        <StackPanel x:Name="CleanFiles" Margin="10 20" RelativePanel.Below="SettingsPanel" >
+                            <Button x:Name="RunClean" Margin="10,24,0,0" Click="RunCleanFolders">Run Folder Clean</Button>
+                        </StackPanel>
+                    </StackPanel>
+
+                    <StackPanel x:Name="FilesToCleanList" Margin="20" RelativePanel.RightOf="SettingsActions">
+                        <Grid>
+                            <TextBlock x:Name="parentFolderListHeader" Margin="0,24,0,0" Typography.Capitals="Normal" FontSize="22" Text="Client Parent Folder" />
+
+                            <ListView x:Name="parentFolderListFix" Margin="20" Padding="20" Width="400" SelectionMode="Single" IsItemClickEnabled="False" SelectionChanged="EditFolderOrFileName" FlowDirection="LeftToRight" >
+                                <!--<ListView.ItemTemplate>-->
+                                        <!--<TextBlock Text="{Binding Name}" />-->
+                                    <!--<DataTemplate x:Name="pf" x:DataType="x:String">-->
+                                    <!--</DataTemplate>-->
+                                <!--</ListView.ItemTemplate>-->
+                            </ListView>
+                        </Grid>
+
+                    </StackPanel>
+                </RelativePanel>
+                
+                
+
+            </PivotItem>
+
             <Pivot.RightHeader>
                 <CommandBar OverflowButtonVisibility="Collapsed" Background="Transparent">
-                    <AppBarButton x:Name="prevButton" IsEnabled="False" Icon="Previous" Click="previous_Click"/>
+                    <AppBarButton x:Name="createNewClient" IsEnabled="True" Icon="Add" Click="ToggleNewClientWindow"/>
+                    <AppBarSeparator />
+                    <AppBarButton x:Name="prevButton" IsEnabled="False" Icon="Previous" Click="PreviousClick"/>
                     <AppBarSeparator/>
-                    <AppBarButton x:Name="runscript_button" Icon="Play" Click="runScript_Click"/>
-                    <AppBarButton x:Name="save_button" Icon="Save" IsEnabled="False" Click="SaveChanges" />
+                    <AppBarButton x:Name="getDirectoriesButton" Icon="Play" Click="GetWorkingDirectories"/>
+                    <AppBarButton x:Name="saveButton" Icon="Save" IsEnabled="False" Click="SaveChanges" />
                     <AppBarSeparator/>
-                    <AppBarButton x:Name="nextButton" IsEnabled="False" Icon="Next" Click="next_Click"/>
+                    <AppBarButton x:Name="nextButton" IsEnabled="False" Icon="Next" Click="NextClick"/>
                 </CommandBar>
             </Pivot.RightHeader>
         </Pivot>
+        
+        
         <Popup VerticalOffset="10" HorizontalOffset="200" x:Name="StandardPopup">
             <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
                 Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
@@ -90,6 +126,35 @@
                 </StackPanel>
             </Border>
         </Popup>
+        <Popup VerticalOffset="10" HorizontalOffset="200" x:Name="ThrownError">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+                Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+                BorderThickness="2" >
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <RelativePanel Margin="20">
+                        <TextBlock x:Name="ThrowErrorMessage" Margin="0,24,0,0" Typography.Capitals="Normal" FontSize="22" />
+                    </RelativePanel>
+                    <Button Content="Close" Click="CloseError" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+        <Popup VerticalOffset="10" HorizontalOffset="200" x:Name="newClientPopup">
+            <Border BorderBrush="{StaticResource ApplicationForegroundThemeBrush}" 
+                Background="{StaticResource ApplicationPageBackgroundThemeBrush}"
+                BorderThickness="2" >
+                <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+                    <RelativePanel Margin="20">
+                        <TextBlock x:Name="Sample" Margin="0,24,0,0" Typography.Capitals="Normal" FontSize="22" />
+                    </RelativePanel>
+                    <Button Content="Close" Click="ToggleNewClientWindow" HorizontalAlignment="Center"/>
+                </StackPanel>
+            </Border>
+        </Popup>
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <RelativePanel Margin="20">
+                <TextBlock x:Name="add_modal" />
+            </RelativePanel>
+        </StackPanel>
     </Grid>
 
 </Window>

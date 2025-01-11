@@ -1,29 +1,37 @@
 {
   "Version": 1,
-  "WorkspaceRootPath": "C:\\Users\\ants\\workspace\\DocumentRegister\\",
+  "WorkspaceRootPath": "C:\\Users\\gato\\workspace\\DocumentRegister\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
-    },
-    {
-      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\gato\\workspace\\documentregister\\documentregister\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\mainwindow.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\models\\case.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\gato\\workspace\\documentregister\\documentregister\\helpers\\cleanfolders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\helpers\\cleanfolders.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\gato\\workspace\\documentregister\\documentregister\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\mainwindow.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\gato\\workspace\\documentregister\\documentregister\\models\\case.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\models\\case.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\models\\form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\gato\\workspace\\documentregister\\documentregister\\models\\form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\models\\form.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\properties\\publishprofiles\\win10-arm64.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\properties\\publishprofiles\\win10-arm64.pubxml||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\gato\\workspace\\documentregister\\documentregister\\helpers\\pathparsing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\helpers\\pathparsing.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\ants\\workspace\\documentregister\\documentregister\\helpers\\viewfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\gato\\workspace\\documentregister\\documentregister\\helpers\\newclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\helpers\\newclient.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|c:\\users\\gato\\workspace\\documentregister\\documentregister\\helpers\\viewfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{C3DE276F-726E-46FE-B8BE-CCA1DBA19F5C}|DocumentRegister\\DocumentRegister.csproj|solutionrelative:documentregister\\helpers\\viewfile.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
@@ -33,96 +41,112 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 198,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 200,
+          "SelectedChildIndex": 3,
           "Children": [
             {
               "$type": "Document",
-              "DocumentIndex": 4,
-              "Title": "win10-arm64.pubxml",
-              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Properties\\PublishProfiles\\win10-arm64.pubxml",
-              "RelativeDocumentMoniker": "DocumentRegister\\Properties\\PublishProfiles\\win10-arm64.pubxml",
-              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Properties\\PublishProfiles\\win10-arm64.pubxml",
-              "RelativeToolTip": "DocumentRegister\\Properties\\PublishProfiles\\win10-arm64.pubxml",
-              "ViewState": "AQIAAAAAAAAAAAAAAABOwAcAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003576|",
-              "WhenOpened": "2024-05-09T23:41:15.061Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ViewFile.cs",
-              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\ViewFile.cs",
-              "RelativeDocumentMoniker": "DocumentRegister\\Helpers\\ViewFile.cs",
-              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\ViewFile.cs",
-              "RelativeToolTip": "DocumentRegister\\Helpers\\ViewFile.cs",
-              "ViewState": "AQIAAAsAAAAAAAAAAAA0wCYAAAAAAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-01T03:20:25.387Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 2,
               "Title": "MainWindow.xaml",
-              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml",
+              "DocumentMoniker": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml",
               "RelativeDocumentMoniker": "DocumentRegister\\MainWindow.xaml",
-              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml",
+              "ToolTip": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml",
               "RelativeToolTip": "DocumentRegister\\MainWindow.xaml",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAUAAAA6AAAA",
+              "ViewState": "AgIAADkAAAAAAAAAAAAAAFcAAAA/AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2024-04-13T20:15:21.028Z",
+              "WhenOpened": "2024-08-27T12:08:21.297Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "Case.cs",
+              "DocumentMoniker": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Case.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\Models\\Case.cs",
+              "ToolTip": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Case.cs",
+              "RelativeToolTip": "DocumentRegister\\Models\\Case.cs",
+              "ViewState": "AgIAABEAAAAAAAAAAAA8wEcAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T17:57:26.448Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 4,
+              "Title": "Form.cs",
+              "DocumentMoniker": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Form.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\Models\\Form.cs",
+              "ToolTip": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Form.cs",
+              "RelativeToolTip": "DocumentRegister\\Models\\Form.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA8AAAAJAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-24T15:54:37.303Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "CleanFolders.cs",
+              "DocumentMoniker": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\CleanFolders.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\Helpers\\CleanFolders.cs",
+              "ToolTip": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\CleanFolders.cs",
+              "RelativeToolTip": "DocumentRegister\\Helpers\\CleanFolders.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAiAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T00:51:36.876Z",
               "EditorCaption": ""
             }
           ]
         },
         {
-          "DockedWidth": 202,
+          "DockedWidth": 200,
           "SelectedChildIndex": 2,
           "Children": [
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{d78612c7-9962-4b83-95d9-268046dad23a}"
-            },
-            {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{34e76e81-ee4a-11d0-ae2e-00a0c90fffc3}"
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "NewClient.cs",
+              "DocumentMoniker": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\NewClient.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\Helpers\\NewClient.cs",
+              "ToolTip": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\NewClient.cs",
+              "RelativeToolTip": "DocumentRegister\\Helpers\\NewClient.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-10T01:27:41.072Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MainWindow.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml.cs",
-              "RelativeDocumentMoniker": "DocumentRegister\\MainWindow.xaml.cs",
-              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml.cs",
-              "RelativeToolTip": "DocumentRegister\\MainWindow.xaml.cs",
-              "ViewState": "AQIAABAAAAAAAAAAAAAIwCAAAAA5AAAA",
+              "DocumentIndex": 5,
+              "Title": "PathParsing.cs",
+              "DocumentMoniker": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\PathParsing.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\Helpers\\PathParsing.cs",
+              "ToolTip": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\PathParsing.cs",
+              "RelativeToolTip": "DocumentRegister\\Helpers\\PathParsing.cs",
+              "ViewState": "AgIAAAgAAAAAAAAAAAAcwBMAAAAJAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-13T20:25:33.721Z",
+              "WhenOpened": "2025-01-10T00:52:00.775Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainWindow.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\MainWindow.xaml.cs",
+              "ToolTip": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\MainWindow.xaml.cs",
+              "RelativeToolTip": "DocumentRegister\\MainWindow.xaml.cs",
+              "ViewState": "AgIAABsAAAAAAAAAAAAQwCIAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2024-08-27T06:56:14.63Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "Form.cs",
-              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Form.cs",
-              "RelativeDocumentMoniker": "DocumentRegister\\Models\\Form.cs",
-              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Form.cs",
-              "RelativeToolTip": "DocumentRegister\\Models\\Form.cs",
-              "ViewState": "AQIAAAAAAAAAAAAAAAAAAAgAAAAaAAAA",
+              "DocumentIndex": 7,
+              "Title": "ViewFile.cs",
+              "DocumentMoniker": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\ViewFile.cs",
+              "RelativeDocumentMoniker": "DocumentRegister\\Helpers\\ViewFile.cs",
+              "ToolTip": "C:\\Users\\gato\\workspace\\DocumentRegister\\DocumentRegister\\Helpers\\ViewFile.cs",
+              "RelativeToolTip": "DocumentRegister\\Helpers\\ViewFile.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAACEAAAATAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-04-24T22:33:53.525Z"
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "Case.cs",
-              "DocumentMoniker": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Case.cs",
-              "RelativeDocumentMoniker": "DocumentRegister\\Models\\Case.cs",
-              "ToolTip": "C:\\Users\\ants\\workspace\\DocumentRegister\\DocumentRegister\\Models\\Case.cs",
-              "RelativeToolTip": "DocumentRegister\\Models\\Case.cs",
-              "ViewState": "AQIAACAAAAAAAAAAAAAUwBcAAAArAAAA",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2024-03-29T21:47:33.133Z"
+              "WhenOpened": "2025-01-08T19:05:48.729Z"
             }
           ]
         }

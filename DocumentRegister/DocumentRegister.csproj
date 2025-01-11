@@ -12,16 +12,21 @@
     <EnableMsixTooling>true</EnableMsixTooling>
     <GenerateAppInstallerFile>True</GenerateAppInstallerFile>
     <AppxPackageSigningEnabled>True</AppxPackageSigningEnabled>
-    <PackageCertificateThumbprint>6C4C1CA5F15643D0180CB8C46AD0CE9A1C3A7E01</PackageCertificateThumbprint>
+    <PackageCertificateThumbprint>310F58B62599E872C260ECB74AC62922C54329FD</PackageCertificateThumbprint>
     <AppxPackageSigningTimestampDigestAlgorithm>SHA256</AppxPackageSigningTimestampDigestAlgorithm>
-    <AppxAutoIncrementPackageRevision>True</AppxAutoIncrementPackageRevision>
+    <AppxAutoIncrementPackageRevision>False</AppxAutoIncrementPackageRevision>
     <AppxSymbolPackageEnabled>False</AppxSymbolPackageEnabled>
     <GenerateTestArtifacts>True</GenerateTestArtifacts>
-    <AppxBundle>Never</AppxBundle>
+    <AppxBundle>Always</AppxBundle>
     <AppInstallerUri>C:\Users\ants\Downloads</AppInstallerUri>
     <HoursBetweenUpdateChecks>0</HoursBetweenUpdateChecks>
     <UserSecretsId>1480f8ca-fa1e-42d6-b07c-b97944c1e537</UserSecretsId>
+    <AppxBundlePlatforms>x64</AppxBundlePlatforms>
+
   </PropertyGroup>
+  <ItemGroup>
+    <Content Remove="Assets\folder.png" />
+  </ItemGroup>
 
   <ItemGroup>
     <Content Include="Assets\SplashScreen.scale-200.png" />

@@ -12,7 +12,7 @@ namespace DocumentRegister.Models
             To = "";
             From = "";
             DocType = "";
-            Privilaged = false;
+            Privileged = false;
         }
         public bool Saved { get; set; }
         public string Description { get; set; }
@@ -20,6 +20,6 @@ namespace DocumentRegister.Models
         public string To { get; set; }
         public string From { get; set; }
         public string DocType { get; set; }
-        public bool Privilaged { get; set; }
+        public bool Privileged { get; set; }
     }
 }

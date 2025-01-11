@@ -29,9 +29,9 @@ namespace DocumentRegister.Models
         public Case(string parentPath)
         {
             ParentPath = parentPath;
-            SetValues();
             FormVals = new Form();
             ProcessedCount = 1;
+            SetValues();
             InitializeProcessPaths();
         }
         public string ParentPath { get; }  

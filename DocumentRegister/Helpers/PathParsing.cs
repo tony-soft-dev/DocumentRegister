@@ -34,7 +34,7 @@ namespace DocumentRegister.Helpers
             return null;
         }
 
-        public static bool Contains(this String str, String substring,
+        private static bool Contains(this String str, String substring,
                             StringComparison comp)
         {
             if (substring == null)
@@ -47,7 +47,7 @@ namespace DocumentRegister.Helpers
             return str.IndexOf(substring, comp) >= 0;
         }
 
-        public static string GetExcel(string[] employeeParentFiles)
+        private static string GetExcel(string[] employeeParentFiles)
         {
             return Array.Find(employeeParentFiles, path => path.EndsWith(".xlsx", StringComparison.Ordinal));
         }
